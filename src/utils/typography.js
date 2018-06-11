@@ -3,8 +3,8 @@ import Typography from "typography";
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['proxima-nova', 'Helvetica Neue', 'sans-serif'],
-  bodyFontFamily: ['europa', 'proxima-soft', 'sans-serif'],
+  headerFontFamily: ['brandon-grotesque', 'Helvetica Neue', 'sans-serif'],
+  bodyFontFamily: ['europa', 'sans-serif'],
   bodyWeight: 300,
   headerWeight: 700,
   overrideStyles: () => ({
@@ -14,9 +14,13 @@ const typography = new Typography({
       fontSize: '4em'
     },
     h2: {
-      textTransform: 'uppercase',
-      letterSpacing: '4px',
-      fontSize: '2em',
+      fontFamily: 'brandon-grotesque',
+      fontWeight: 400,
+    },
+    h4: {
+      fontFamily: 'brandon-grotesque',
+      fontWeight: 400,
+      marginBottom: '0.7rem',
     },
   })
 });

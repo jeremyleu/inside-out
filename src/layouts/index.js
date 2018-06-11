@@ -1,30 +1,48 @@
-import React from "react"
+import React, { Fragment } from "react";
+import Link from "gatsby-link";
 
-export default ({ children }) =>
-  <div>
-    <div style={{ margin: '0 auto', width: '100%', height: '400px', backgroundColor: '#2C365E', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-      <h1>
-        Hello
-      </h1>
+import './index.scss';
+
+const NAV = [
+  { name: 'Home', path: '/' },
+  { name: 'Team', path: '/team/' },
+  { name: 'Approach', path: '/approach/' },
+  { name: 'Client Account Access', path: 'https://advisorclient.com/', external: true },
+  { name: 'Panoramix', path: 'https://www.panoramixfinancial.com/', external: true },
+].map((link) => (
+  <div className="nav-link-container">
+    {link.external ?
+    (
+      <a href={link.path} key={link.name} target="_blank">
+        {link.name}
+      </a>
+    ) : (
+      <Link to={link.path} key={link.name}>
+        {link.name}
+      </Link>
+    )}
+  </div>
+));
+
+
+
+
+export default ({ children }) => (
+  <div className="container">
+    <div className="header">
+      Inside-Out Wealth Strategies.
     </div>
-    <div>
-      {children()}
+    <div className="navigation">
+      {NAV}
     </div>
-    <div style={{ margin: '0 auto', width: '100%', minHeight: '250px', backgroundColor: '#eee' }}>
-      <div className="sections" style={{ padding: '3rem 7rem' }}>
-        <div style={{ width: '160px', display: 'inline-block', fontWeight: 600 }}>
-          Questions?
-          <br />
-          <br />
-        </div>
-        <div style={{ display: 'inline-block' }}>
-          Reach out at <strong>ksleu@insideoutws.com</strong>.
-          <br />
-          <br />
-        </div>
-        <div style={{ textTransform: 'uppercase', fontWeight: 600, color: '#bbb' }}>
-          Last Updated: November 28, 2017
-        </div>
-      </div>
+    <hr />
+    {children()}
+    <hr />
+    <div className="footer">
+      Questions? Feel free to reach out at{' '}
+      <a href="mailto:ksleu@insideoutws.com">ksleu@insideoutws.com</a>{' '}
+      or <a href="mailto:achow@insideoutws.com">achow@insideoutws.com</a>.
+      <br />
     </div>
   </div>
+);

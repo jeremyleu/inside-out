@@ -10,7 +10,7 @@ export default () =>
       We intend to fulfill our fiduciary responsibility by helping clients make good financial decisions.
     </p>
     <p>
-      Click to learn more about our approach to making good decisions.
+      <Link to="/approach/">Click</Link> to learn more about our approach to making good decisions.
     </p>
     <p>
       At InsideOut, we advocate an inside-out approach to financial planning.

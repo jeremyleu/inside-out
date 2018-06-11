@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 
-import './index.css';
+import './index.scss';
 
 export default () =>
   <div className="body-text">
@@ -17,8 +17,4 @@ export default () =>
       It starts with the decision maker’s goals and constraints, thus, inside,
       and use these as guidelines to identify products and services out there to increase the chance of achieving the goals.
     </p>
-    <p>
-      Questions? Feel free to reach out at ksleu@insideoutws.com.
-    </p>
-
   </div>
